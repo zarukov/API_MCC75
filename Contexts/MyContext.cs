@@ -41,5 +41,11 @@ public class MyContext : DbContext
             .HasForeignKey<Account>(fk => fk.EmployeeNIK);
 
         //tambah relasi many employee to one manager
+        /*modelBuilder.Entity<Employee>()
+            .HasKey(m => new {m.ManagerId});*/
+        modelBuilder.Entity<Employee>()
+            .HasOne(e => e.ManagerId)
+            .WithMany(e => e.NIK)
+            .HasKey<Employee>(e => e.EmployeeNIK);
     }
 }

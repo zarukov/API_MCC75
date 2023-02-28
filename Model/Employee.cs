@@ -30,6 +30,8 @@ public class Employee
 
     [Column("phone_number"), MaxLength(20)]
     public string? PhoneNumber { get; set; }
+    [Column("manager_id", TypeName = "nchar(5)")]
+    public string ManagerId { get; set; }
 
     //kardinalitas
     public ICollection<Profiling>? Profilings { get; set; }
