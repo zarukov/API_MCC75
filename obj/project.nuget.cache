@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "vVg7W71jonm3QVte0rYAwG90JR7+lTWB8wtQsU7cIkMGFsstoKbbsnV/I7AgUqF+tbZ6mUIRh6Ge6CgOOguaUw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\GAMING 3\\source\\repos\\ClientServer\\API_MCC75\\API_MCC75.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GAMING 3\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\GAMING 3\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\GAMING 3\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\GAMING 3\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\GAMING 3\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\GAMING 3\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
