@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace Project_MVC_MCC75.Models;
+namespace API_MCC75.Models;
 
 [Table("tb_m_roles")]
 public class Role
@@ -13,5 +14,6 @@ public class Role
     public string Name { get; set; }
 
     //relasi
+    [JsonIgnore]
     public ICollection<AccountRole>? AccountRoles { get; set; }
 }

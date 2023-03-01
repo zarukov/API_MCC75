@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Project_MVC_MCC75.Models;
+using API_MCC75.Models;
 
-namespace Project_MVC_MCC75.Contexts;
+namespace API_MCC75.Contexts;
 //membuat model2 yang akan didaftarkan di database
 public class MyContext : DbContext
 {
@@ -33,7 +33,17 @@ public class MyContext : DbContext
              e.Email,
              e.PhoneNumber
          });*/
-
+        modelBuilder.Entity<Role>().HasData(
+            new Role
+            {
+                Id = 1,
+                Name = "Admin"
+            },
+            new Role
+            {
+                Id = 2,
+                Name = "User"
+            });
         //Relasi one Employee ke one Account + menjadi Primary Key
         modelBuilder.Entity<Employee>()
             .HasOne(e => e.Account)
@@ -44,8 +54,9 @@ public class MyContext : DbContext
         /*modelBuilder.Entity<Employee>()
             .HasKey(m => new {m.ManagerId});*/
         modelBuilder.Entity<Employee>()
-            .HasOne(e => e.ManagerId)
-            .WithMany(e => e.NIK)
-            .HasKey<Employee>(e => e.EmployeeNIK);
+            .HasMany(e => e.Employees)
+            .WithOne(e => e.Manager)
+            .HasForeignKey(fk => fk.ManagerId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

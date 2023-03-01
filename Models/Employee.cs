@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 
-namespace Project_MVC_MCC75.Models;
+namespace API_MCC75.Models;
 
 [Table("tb_m_employees")]
 public class Employee
@@ -31,11 +32,17 @@ public class Employee
     [Column("phone_number"), MaxLength(20)]
     public string? PhoneNumber { get; set; }
     [Column("manager_id", TypeName = "nchar(5)")]
-    public string ManagerId { get; set; }
+    public string? ManagerId { get; set; }
 
     //kardinalitas
+    [JsonIgnore]
     public ICollection<Profiling>? Profilings { get; set; }
+    [JsonIgnore]
     public Account? Account { get; set; }
+    [JsonIgnore]
+    public ICollection<Employee>? Employees { get; set; }
+    [JsonIgnore]
+    public Employee? Manager { get; set; }
 }
 public enum GenderEnum
 {

@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace Project_MVC_MCC75.Models;
+namespace API_MCC75.Models;
 
 [Table("tb_m_accounts")]
 public class Account
@@ -13,6 +14,8 @@ public class Account
     public string Password { get; set; }
 
     //kardinalitas
+    [JsonIgnore]
     public ICollection<AccountRole>? Accounts { get; set; }
+    [JsonIgnore]
     public Employee? Employee { get; set; }
 }

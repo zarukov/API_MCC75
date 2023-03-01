@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace Project_MVC_MCC75.Models;
+namespace API_MCC75.Models;
 
 [Table("tb_tr_account_roles")]
 public class AccountRole
@@ -16,9 +17,10 @@ public class AccountRole
     public int RoleId { get; set; }
 
     //relasi & kardinalitas
+    [JsonIgnore]
     [ForeignKey(nameof(RoleId))]
     public Role? Role { get; set; }
-
+    [JsonIgnore]
     [ForeignKey(nameof(AccountNIK))]
     public Account? Account { get; set; }
 }

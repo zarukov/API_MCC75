@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
-namespace Project_MVC_MCC75.Models;
+namespace API_MCC75.Models;
 
 [Table("tb_m_universities")]
 public class University
@@ -13,5 +14,6 @@ public class University
     public string Name { get; set; }
 
     //Relasi & kardinalitas
+    [JsonIgnore]
     public ICollection<Education>? Educations { get; set; }//ICollection = many
 }
