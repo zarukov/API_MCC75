@@ -12,6 +12,5 @@ public class EmployeesController : BaseController<string, Employee, EmployeeRepo
 {
 	public EmployeesController(EmployeeRepository employeeRepository) : base(employeeRepository)
 	{
-
 	}
 }
